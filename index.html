@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Site-ul Meu</title>
+	<style>
+		body{
+			background-color: lightblue;
+		}
+		img{
+			border-radius: 50%;
+		}
+		td:first-child, th:first-child {
+        color: purple;
+    }
+	ol li{
+		color: green;
+	}
+	ol {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    ol li::before {
+        content: "⭐ "; 
+    }
+	table, th, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+		background-color:lightyellow;
+    }
+	th, td {
+        padding: 8px; 
+        text-align: center;
+    }
+	ul {
+    border: 2px solid purple; /* culoare și grosimea bordurii */
+    padding: 10px;
+    width: fit-content; /* se potrivește pe dimensiunea conținutului */
+    }
+	h1 {
+    font-family: "Comic Sans MS", cursive;
+}
+	h3{
+    font-family: Arial;
+}
+	h2 {
+    font-family: "Comic Sans MS", cursive;
+}
+	.email{
+		font-size: 20px;
+	}
+	body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+	</style>
+</head>
+<body>
+	<h1>Nume:Gaitan</h1>
+	<h2>Prenume:Raul-Iulian</h2>
+	<img  width=150px; height=200px; src="lab6/images/profile-picture.jpg"
+	<br>
+	 <p class="email"> email:raulgiulian@gmail.com</p>
+	<p>	<br>
+		<h3>Asteptari legate de educatie:</h3>
+		<ol>	
+		<li> Să învăț lucruri care mă ajută în viața de zi cu zi.</li>
+		<li> Să am profesori care explică clar și ne încurajează.</li>
+		<li> Să învăț nu doar din cărți, ci și din experiențe.</li>
+		<li> Să mă pregătească pentru viitor și pentru meseria pe care mi-o doresc.</li>
+		</ol>
+</p>
+	<br>
+	<table>
+	   <tr>
+		<th> Disciplina </th>
+		<th> An </th>
+		<th> Link </th>
+	   </tr>
+	    <tr>
+		<th> Informatica Aplicata </th>
+		<th> 1 </th>
+		<th> <a href="https://etti.utcluj.ro/files/Acasa/Site/FiseDisciplina/EaRo/06.pdf">DE</a> </th>
+	   </tr>
+	   <tr>
+		<th> Tehnici CAD </th>
+		<th> 2 </th>
+		<th> <a href="https://etti.utcluj.ro/files/Acasa/Site/FiseDisciplina/EaRo/28.pdf">DE</a> </th>
+	   </tr>
+	   <tr>
+		<th> Sisteme cu microprocesoare</th>
+		<th> 3 </th>
+		<th> <a href="https://etti.utcluj.ro/files/Acasa/Site/FiseDisciplina/MON/37.pdf">DE</a> </th>
+	   </tr>
+  
+	</table>
+	<p>Hobby-uri:
+		<ul>
+		<li> Baschet</li>
+		<li> Sala</li>
+		<li> Gaming</li>
+		</ul>		
+</p>
+</body>
+</html>

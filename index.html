@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Site-ul Meu</title>
+	
 	<style>
 		body{
 			background-color: lightblue;
@@ -25,6 +26,7 @@
     }
 	table, th, td {
         border: 2px solid black;
+		margin: 0 auto;
         border-collapse: collapse;
 		background-color:lightyellow;
     }
@@ -33,10 +35,19 @@
         text-align: center;
     }
 	ul {
-    border: 2px solid purple; /* culoare și grosimea bordurii */
+    border: 2px solid purple;
     padding: 10px;
-    width: fit-content; /* se potrivește pe dimensiunea conținutului */
-    }
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    list-style-position: inside;
+}
+ul {
+    list-style: none;
+}
+ul li::after {
+    content: "❤️ ";
+}
 	h1 {
     font-family: "Comic Sans MS", cursive;
 }
@@ -54,14 +65,48 @@
     flex-direction: column;
     align-items: center; 
 }
+	.container {
+			border: 3px solid purple;
+			border-radius: 15px;
+			padding: 20px 40px;
+			background-color: white;
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			max-width: 600px;
+			text-align: center;
+			margin: 40px 0;
+		}
+		button {
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;  /* mic spațiu între email și buton */
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: darkmagenta;
+}
+#realizari li::after {
+    content: "";
+}
+#realizari{
+	border: none;
+    padding: 20px 40px;
+}
 	</style>
+	
 </head>
 <body>
+	<div class="container" id="content">
 	<h1>Nume:Gaitan</h1>
 	<h2>Prenume:Raul-Iulian</h2>
-	<img  width=150px; height=200px; src="lab6/images/profile-picture.jpg"
+	<img  width=150px; height=200px; src="images/profile-picture.jpg"
 	<br>
 	 <p class="email"> email:raulgiulian@gmail.com</p>
+	 <button onclick="schimbaVersiunea()">Alta viata</button>
 	<p>	<br>
 		<h3>Asteptari legate de educatie:</h3>
 		<ol>	
@@ -97,10 +142,28 @@
 	</table>
 	<p>Hobby-uri:
 		<ul>
-		<li> Baschet</li>
+		<li> Fotbal</li>
 		<li> Sala</li>
 		<li> Gaming</li>
 		</ul>		
 </p>
+<script>
+function schimbaVersiunea() {
+  document.getElementById("content").innerHTML = `
+				 
+				<h1 style="font-family: 'Roboto', sans-serif;">Jucător profesional de fotbal</h1>
+				<h2 style="font-family: 'Arial', sans-serif;">Echipa: FC Barcelona</h2>
+                <img  width="600" height="400" src="images/lamine_yamal.jpg" >
+				<ul id="realizari">
+					Realizari ideale pe timpul facultatii:
+					<li>⭐Sa fiu selectionat la echipa nationala a Romaniei pentru urmatorul campionat european</li>
+					<li>⭐Sa fiu chemat la selectii la echipa mea preferata:Fc Barcelona</li>
+					<li>⭐Sa castig liga campionilor si sa inscriu un gol in finala</li>
+				</ul>
+			`;
+	document.body.style.backgroundColor = "black";
+}
+</script>
+</div>
 </body>
 </html>

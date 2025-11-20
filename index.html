@@ -96,6 +96,12 @@ button:hover {
 	border: none;
     padding: 20px 40px;
 }
+#birth {
+    font-size: 24px;
+    
+    margin-top: 20px; 
+    display: inline-block;
+}
 	</style>
 	
 </head>
@@ -103,9 +109,16 @@ button:hover {
 	<div class="container" id="content">
 	<h1>Nume:Gaitan</h1>
 	<h2>Prenume:Raul-Iulian</h2>
-	<img  width=150px; height=200px; src="images/profile-picture.jpg"
+	<img  width=150px; height=200px; src="images/profile-picture.jpg">
 	<br>
-	 <p class="email"> email:raulgiulian@gmail.com</p>
+	<span id="birth" 
+      data-year="2006"
+	  data-original="Anul nasterii: 2006"
+      onmouseover="showAge(this)"
+      onmouseout="showYear(this)">
+         Anul nasterii: 2006
+	</span>
+	<p class="email"> email:raulgiulian@gmail.com</p>
 	 <button onclick="schimbaVersiunea()">Alta viata</button>
 	<p>	<br>
 		<h3>Asteptari legate de educatie:</h3>
@@ -147,11 +160,13 @@ button:hover {
 		<li> Gaming</li>
 		</ul>		
 </p>
+
+
 <script>
 function schimbaVersiunea() {
   document.getElementById("content").innerHTML = `
 				 
-				<h1 style="font-family: 'Roboto', sans-serif;">Jucător profesional de fotbal</h1>
+				<h1 style="font-family: 'Roboto', sans-serif;">Jucător profesionist de fotbal</h1>
 				<h2 style="font-family: 'Arial', sans-serif;">Echipa: FC Barcelona</h2>
                 <img  width="600" height="400" src="images/lamine_yamal.jpg" >
 				<ul id="realizari">
@@ -162,6 +177,16 @@ function schimbaVersiunea() {
 				</ul>
 			`;
 	document.body.style.backgroundColor = "black";
+}
+function showAge(el) {
+    const birthYear = parseInt(el.dataset.year);
+    const currentYear = new Date().getFullYear();
+    const age = currentYear - birthYear;
+    el.textContent = "Varsta: "+age + " ani";
+}
+
+function showYear(el) {
+    el.textContent = el.dataset.original;
 }
 </script>
 </div>
